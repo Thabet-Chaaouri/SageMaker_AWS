@@ -3,7 +3,9 @@ The customer wants a code example on how to fine-tune multilabel text classifier
 
 This code example was built based on this [Hugging Face documentation about Amazon Sagemaker](https://huggingface.co/docs/sagemaker/index)
 
-## First step: build the train.py taining script
+## Question 1 & 2 : Training on sagemaker and scaling to a distributed setup
+
+### First step: build the train.py taining script
 it is a standard training script that:
 * Uses Trainer API so it can scale easily into a distributed training afterwards.
 * Receives hyperparameters and sagemaker environment variables as command line arguments, so add a part in the beginning to parse those arguments. 
@@ -32,7 +34,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
 
 checkout `train.py` script file.
 
-## Second step: launch training on Amazon SageMaker
+### Second step: launch training on Amazon SageMaker
 
 As you want a code example fully AWS, I chose to launch the training from a sagemaker notebook instance inside AWS.
 This is one method. Other method is to launch the train from your local environement but the first one is easier and it avoids you dealing with networking and security problems connecting your OnPrem environemet to the cloud (Unless you have already a pipeline like that).
@@ -52,5 +54,7 @@ Checkout my well commented `Fine_tuning_AWS.ipynb` notebook to walk you out thro
 
 I launch my training. Once finished with one line of code I can deploy my model.
 
+
 ## Question 3: MLOps Workflow
+
 
