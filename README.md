@@ -48,6 +48,9 @@ So create an aws sagemaker notebook instance:
 Once your instance is created, launch it, choose a notebook with a Pytorch kernel and start typing your code. 
 Checkout my well commented `Fine_tuning_AWS.ipynb` notebook to walk you out through this process. In this notebook, thanks to Sagemaker and the Hugging Face Deep Learning Containers on AWS:
 * First, I make a non-distributed code for finetuning a simple classifier
-* Then I scale to a distributed setup taking adavantage of the Trainer API and the flexibility of the Estimator (the answer to question 2)
+* Then I scale to a distributed setup taking adavantage of the Trainer API and the flexibility of the Estimator (The answer to question 2)
 
 I launch my training. Once finished with one line of code I can deploy my model.
+
+## Question 3: MLOps Workflow
+
