@@ -69,8 +69,8 @@ The pipeline is a sequence of steps:
 * First step is `the processing job` using an adequate EC2 instance (cpu instance).
 * Second step is the `training step`. Here we use the Hugging Face Estimator we have seen in our example. the training step will execute behind the scenes `.fit` method of the estimator. For this step we use a GPU instance.
 * Third step is the `evaluatation step`
-* Step 4 checking a condition for deployment after the evaluation
-* If condition validated the trained model is registered and versioned.
+* Step 4 checking a condition for deployment after the evaluation. If the model performance is not satisfactory, you can fine-tune the model by adjusting the hyperparameters and repeating previous steps until you are satisfied with the model performance.
+* If condition validated, the trained model is registered and versioned.
 * Last step is the deployment step. In the figure, the deployment is done in a sagemaker endpoint (we use a lambda function to build the endpoint), but we can also deploy the model itself to a Lambda function outside Sagemaker.
 
 Besides handling automatic deployment workflow, Sagemaker manages:
@@ -79,3 +79,4 @@ Besides handling automatic deployment workflow, Sagemaker manages:
 * Metrics and system monitoring (if you deployed the model in a sagemaker endpoint)
 * High availability, load_balancing, autoscaling ...
 
+This way you monitor the deployed model's performance in production and retrain it periodically on new data to ensure that it stays up-to-date and continues to perform well.
