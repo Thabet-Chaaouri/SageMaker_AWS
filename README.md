@@ -10,7 +10,7 @@ it is a standard training script that:
 * Uses Trainer API so it can scale easily into a distributed training afterwards.
 * Receives hyperparameters and sagemaker environment variables as command line arguments, so add a part in the beginning to parse those arguments. 
 
-For the purpose of this exercise, I used the tweets_hate_speech_detection dataset from Hugging Face hub. 
+For the purpose of this exercise, I used the [tweets_hate_speech_detection dataset](https://huggingface.co/datasets/tweets_hate_speech_detection) from Hugging Face hub. 
 The labels for this dataset are:
 * 0 (no hate speech)
 * 1 (hate speech), which is a binary calssification problem. 
